@@ -12,6 +12,8 @@ services:
    - wordpress-net
  wordpress:
   container_name: wordpress
+  depends_on: 
+   - wordpress_db
   ports:
    - "80:80"
   image: wordpress
