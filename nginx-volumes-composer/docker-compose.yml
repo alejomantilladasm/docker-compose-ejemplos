@@ -1,0 +1,9 @@
+version: '3'
+services:
+ web:
+  container_name: nginx-compose
+  ports:
+   - "8085:80"
+  image: nginx
+  volumes:
+   - "/home/dsanguano/docker-compose/nginx-volumes-composer/blue-app:/usr/share/nginx/html"

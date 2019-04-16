@@ -1,0 +1,9 @@
+version: '2'
+services:
+ web:
+  image: nginx:alpine
+  container_name: nginx-mem-compose
+  ports:
+   - "9095:80"
+  mem_limit: 200mb
+  cpuset: "0"

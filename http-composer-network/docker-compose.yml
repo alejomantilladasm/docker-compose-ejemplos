@@ -1,0 +1,24 @@
+version: '3'
+services:
+ web:
+  container_name: httpd-compose
+  ports:
+   - "8071:80"
+  image: httpd
+  networks:
+   net-httpd:
+    ipv4_address: 192.168.200.10
+ web2:
+  container_name: httpd-2-compose
+  ports:
+   - "8072:80"
+  image: httpd
+  networks:
+   net-httpd:
+    ipv4_address: 192.168.200.20
+networks:
+ net-httpd:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 192.168.200.0/24 

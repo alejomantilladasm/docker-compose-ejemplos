@@ -1,0 +1,13 @@
+version: '3'
+services:
+ web:
+  container_name: build-compose
+  ports:
+   - "8085:80"
+  image: build-test
+  #Construir desde el mismo directorio donde se encuentra el Filedocker
+  #build: .
+  #Construir desde un directorio especifico y un nombre que puede ser cuaquiera en vez de Dockerfile
+  build:
+   context: .
+   dockerfile: Dockerfile
