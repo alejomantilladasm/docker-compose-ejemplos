@@ -1,0 +1,29 @@
+version: '3'
+services:
+ 
+ prestashop_db:
+  container_name: mysql-prestashop
+  ports:
+   - "3306:3306"
+  image: mysql:5.6
+  env_file: mysql.env
+  volumes:
+   - $PWD/data:/var/lib/mysql
+  networks:
+   - net
+
+ prestashop:
+  container_name: prestashop
+  ports:
+   - "80:80"
+  image: prestashop/prestashop
+  env_file: prestashop.env
+  depends_on: 
+   - prestashop_db
+  volumes:
+   - $PWD/prestashop-html:/var/www/html
+  networks:
+   - net
+
+networks:
+ net:
