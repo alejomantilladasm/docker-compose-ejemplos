@@ -1,0 +1,15 @@
+version: '3'
+services:
+ app:
+  container_name: apache
+  image: httpd
+  volumes: 
+   - apache:/usr/local/apache2/htdocs
+  ports:
+   - "80:80"
+  networks: 
+   - net
+volumes: 
+ apache:
+networks:
+ net: 
