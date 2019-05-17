@@ -6,3 +6,5 @@ mysql-prestashop/prestashop-html
 
 mysql-joomla/data
 mysql-joomla/joomla-html
+
+*node_modules

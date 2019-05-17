@@ -1,0 +1,15 @@
+version: '3'
+services:
+ web:
+  container_name: node-demo
+  ports:
+   - "80:3000"
+  image: node:10.15.3
+  working_dir: /home/node/apiDemo
+  environment:
+   - NODE_ENV=production
+  volumes:
+   - $PWD/apiDemo:/home/node/apiDemo
+  expose:
+   - "80"
+  command: node server.js
